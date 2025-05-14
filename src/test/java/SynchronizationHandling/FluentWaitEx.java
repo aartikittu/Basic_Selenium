@@ -20,9 +20,14 @@ public class FluentWaitEx {
 		WebElement search= driver.findElement(By.className("gLFyf"));
 		
 		FluentWait wait=new FluentWait(driver);
-		wait.pollingEvery(Duration.ofSeconds(1));
-		wait.withTimeout(Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(search));
+		
+		/*
+		 * wait.pollingEvery(Duration.ofSeconds(1));
+		 * wait.withTimeout(Duration.ofSeconds(10));
+		 * wait.until(ExpectedConditions.elementToBeClickable(search));
+		 */
+		
+		wait.pollingEvery(Duration.ofSeconds(10)).withTimeout(Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(search));
 	}
 
 }
